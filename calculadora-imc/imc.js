@@ -11,9 +11,12 @@ onCalculaImc = () => {
     resultado.innerHTML = imc; 
 };
 
-botaoCalcular.addEventListener('click', onCalculaImc);
+altura.addEventListener('keypress', function (event){
+    if (event.keyCode == 13) {
+        onCalculaImc();
+    };
+});
 
-
-
-
-
+botaoCalcular.addEventListener('click', function (event) {
+    onCalculaImc();
+});
