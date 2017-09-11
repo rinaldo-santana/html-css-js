@@ -1,17 +1,17 @@
 
 var botaoCalcular = document.getElementById('botaoCalcular');
+var peso = document.getElementById('peso');
+var altura = document.getElementById('altura');
+var resultado = document.getElementById('resultado');  
 
-botaoCalcular.addEventListener('click', () => {
-    
-    var peso = document.getElementById('peso').value;
-    var altura = document.getElementById('altura').value;
+calcularIMC = (peso, altura) => { return peso / (altura * altura) };
 
-    var resultado = document.getElementById('resultado');    
+onCalculaImc = () => { 
+    var imc = Math.round( calcularIMC(peso.value, altura.value) * 100 ) / 100;
+    resultado.innerHTML = imc; 
+};
 
-    calculaIMC = (peso, altura) => { return peso / (altura * altura) };
-
-    resultado.innerHTML =  Math.round( calculaIMC(peso, altura) * 100 ) / 100; 
-});
+botaoCalcular.addEventListener('click', onCalculaImc);
 
 
 
