@@ -1,0 +1,61 @@
+
+<!-- Faça um programa que calcule quantos dias uma pessoa ja viveu. 
+Para isso sera informada a idade dele em anos , mes e dia. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calcular Idade</h1>
+
+    <div>
+        <label>Informe os dados solicitados para calcular a idade em dias</label> <br>
+        <label for="ano">Anos</label>
+        <input type="text" name="ano" id="ano"> <br>
+       
+        <label for="mes">Meses</label>
+        <input type="text" name="mes" id="mes"> <br>
+        
+        <label for="dia">Dias</label>
+        <input type="text" name="dias" id="dia"> <br>
+
+        <button type="submit" id="calcular">Calcular</button>
+
+        <div id="resultado"></div>
+    </div>
+    
+    <script>
+
+        var qtdeAnosDias = document.getElementById('ano');
+        var qtdeMesesDias = document.getElementById('mes');
+        var qtdeDias = document.getElementById('dia');
+
+        var resultado = document.getElementById('resultado');
+        var calcular = document.getElementById('calcular');
+
+        calcular.addEventListener('click', function() {
+            var anosEmDias = parseInt(qtdeAnosDias.value) * 12 * 30;
+            var mesesEmDias = parseInt(qtdeMesesDias.value) * 30;
+            var dias = parseInt(qtdeDias.value);
+
+            var totalEmDias = anosEmDias + mesesEmDias + dias;
+
+            resultado.innerHTML = "Total de dias eh: " + totalEmDias;
+            
+        });
+
+        window.addEventListener('load', function (){
+                    qtdeAnosDias.value = 0; 
+                    qtdeMesesDias.value = 0;
+                    qtdeDias.value = 0;
+        });
+        
+    </script>
+</body>
+</html>

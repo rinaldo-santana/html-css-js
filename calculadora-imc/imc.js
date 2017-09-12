@@ -12,9 +12,7 @@ onCalculaImc = () => {
 };
 
 altura.addEventListener('keypress', function (event){
-    if (event.keyCode == 13) {
-        onCalculaImc();
-    };
+   event.keyCode === 13 ? onCalculaImc() : function(){} ; 
 });
 
 botaoCalcular.addEventListener('click', function (event) {
